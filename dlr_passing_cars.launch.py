@@ -35,7 +35,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         *create_visualization_nodes(
-            whitelist=["ego_vehicle"],
+            whitelist=["/"],
             asset_folder=map_image_folder,
             visualization_offset=(606440.120, 5797321.700),
         ),
@@ -47,10 +47,23 @@ def generate_launch_description():
             map_file=map_file,
             model_file=vehicle_model_file,
             controllable=True,
-            v2x_id=0,
+            v2x_id=111,
             vehicle_id=111,
             controller=2,
             debug=False,
-            local_map_size=150.0,
+            local_map_size=150.0
+        ),
+        *create_simulated_vehicle_nodes(
+            namespace="slow_car",
+            start_pose=(606521.120, 5797318.300, 3.13),
+            goal_position=(606471.04, 5797161.11),
+            map_file=map_file,
+            model_file=vehicle_model_file,
+            controllable=True,
+            v2x_id=99,
+            vehicle_id=99,
+            controller=0,
+            debug=False,
+            local_map_size=50.0
         )
     ])
