@@ -56,7 +56,7 @@ def generate_launch_description():
         ),
         *create_simulated_vehicle_nodes(
             namespace="slow_car",
-            start_pose=(606521.120, 5797318.300, 3.13),
+            start_pose=(606522.120, 5797318.300, 3.13),
             goal_position=(606471.04, 5797161.11),
             map_file=map_file,
             model_file=vehicle_model_file2,
@@ -65,7 +65,7 @@ def generate_launch_description():
             vehicle_id=99,
             controller=0,
             debug=False,
-            local_map_size=50.0
+            local_map_size=150.0
         ),
         *create_simulated_vehicle_nodes(
             namespace="simL1",
